@@ -2,7 +2,7 @@ export function TaskList({ tasks, deleteTask, toggleTaskStatus }) {
     return (
         <ul>
             {tasks.map((task) => (
-                <li key={task.id}>
+                <li key={task.id} className="inputBox">
                     <h3
                         style={{
                             textDecoration: task.status === 'completed' ? 'line-through' : 'none'
@@ -11,7 +11,7 @@ export function TaskList({ tasks, deleteTask, toggleTaskStatus }) {
                     </h3>
                     <p>Опис: {task.description}</p>
                     <p>Статус: {task.status}</p>
-                    <p>{task.createdAt}</p>
+                    <p className="sData">{task.createdAt}</p>
                     <button onClick={() => toggleTaskStatus(task.id)}>
                         Завершити завдання
                     </button>
